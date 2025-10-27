@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlipFlop Leaderboard</title>
+  <link rel="stylesheet" href="/static/Leaderboard.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Leaderboard.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="/imgs/Flappy-Bird-Transparent.png" alt="Logo">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Game</a></li>
+        <li><a href="Leaderboard.html">Leaderboard</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn">Privacy Policy</a>
+  </header>
+
+  <main class="card">
+    <h2 id="leaderboardTitle">Top Players</h2>
+
+    <div class="controls">
+      <input type="search" id="search" placeholder="Find your name...">
+      <select id="sortBy">
+        <option value="scoreDesc">Score (high → low)</option>
+        <option value="scoreAsc">Score (low → high)</option>
+        <option value="dateDesc">Date (new → old)</option>
+        <option value="dateAsc">Date (old → new)</option>
+      </select>
+      <!-- Buttons can be linked to JS functions later -->
+      <button id="addDummy">Add sample</button>
+      <button id="exportCsv" class="ghost">Export CSV</button>
+      <button id="clear" class="ghost">Reset</button>
+    </div>
+
+    <div class="card-small">
+      <form id="addForm" action="{{ url_for('add_player') }}" method="POST">
+        <input type="text" name="playerName" placeholder="Name" required>
+        <input type="number" name="playerScore" placeholder="Score" required min="0">
+        <button type="submit">Add / Update</button>
+      </form>
+    </div>
+
+    <div id="tableWrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="rank">#</th>
+            <th>Player</th>
+            <th>Score</th>
+            <th>Last Played</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for idx, player in enumerate(leaderboard, 1) %}
+          <tr>
+            <td>{{ idx }}</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.score }}</td>
+            <td>{{ player.date }}</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="4">មិនមានទិន្នន័យ — ចូលលេង FlipFlop ឬបញ្ចូលគណនីសាកល្បង។</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      <p>© 2025 FlipFlop Game | All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>
+  

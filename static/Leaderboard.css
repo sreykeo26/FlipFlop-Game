@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+body {
+  background: #788789;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(163, 163, 161);
+  padding: 10px 20px;
+  display: flex;
+  justify-content:space-between;  
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+p{
+  color: orange;
+  font-size: 24px;
+  font-family: 'Comic Sans MS', cursive;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+.nav-links {
+  font-size: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; 
+} 
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(49, 47, 59);
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive;
+  line-height: 2.5; 
+  display: inline-block;
+  text-align: center;
+}
+ .nav-links li a:hover {
+  text-decoration: underline;
+}
+.btn {
+  background-color: rgb(73, 73, 231);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 2; 
+  display: inline-block;
+  text-align: center;
+  font-family: Arial, sans-serif; 
+
+}
+main.card {
+  width: 80%;
+  height: 900px;
+  margin: 50px auto; 
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Leaderboard Title ===== */
+#leaderboardTitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ===== Controls ===== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  margin-bottom: 20px;
+}
+
+.controls input,
+.controls select,
+.controls button {
+  padding: 10px;
+  border: 1px solid #615d5d;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Ghost button style */
+button.ghost {
+  background: transparent;
+  border: 1px solid #0fa3b1;
+  color: #0fa3b1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+button.ghost:hover {
+  background: #0fa3b1;
+  color: #fff;
+}
+
+/* ===== Small Card Form ===== */
+.card.small {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  margin-bottom: 30px;
+  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);  ;
+ 
+}
+#leaderboardTitle {
+  font-size: 32px;                
+  color: #09425a; 
+  font-family: 'Comic Sans MS', cursive;           
+
+}
+
+#addForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;            
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+/* ===== Input Fields ===== */
+#addForm input {
+  padding: 15px 20px;    
+  font-size: 16px;       
+  border: 1px solid #ccc;
+  border-radius: 8px;    
+  flex: 1 1 200px;       
+  min-width: 200px;      
+}
+
+/* ===== Submit Button ===== */
+#addForm button {
+  padding: 15px 25px;    
+  font-size: 16px;
+  background-color: #0fa3b1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#addForm button:hover {
+  background-color: rgb(232, 17, 17);
+  transform: scale(1.05);  /* effect hover */
+}
+
+/* ===== Table ===== */
+#tableWrap {
+  margin-top: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #0fa3b1;
+  color: white;
+  font-size: 20px;
+}
+
+td.center {
+  text-align: center;
+}
+
+.empty {
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+}
+
+#restartBtn:hover {
+  background-color: #0d8abf;
+  transform: scale(1.05);
+}
+
+#hint {
+  font-size: 16px;
+  color: #323030;
+  line-height: 1.8;
+  margin-bottom: 30px; /* spacing below hint */
+}
+footer {
+      background: #0c303f;
+      padding: 40px 0;
+    
+    }
+.footer-bottom p {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #0fa3b1;
+      padding-top: 20px;
+      font-size: 20px;
+      color: orange;
+      margin-bottom: 20px;
+    }
+    
